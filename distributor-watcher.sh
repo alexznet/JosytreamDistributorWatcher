@@ -106,5 +106,5 @@ do
    fi
 done
 
-echo "$curTime - script executed" >> $runLogPath
+echo "$curTime - script executed (checked $nodesArrlen nodes)" >> $runLogPath
 echo -e "${GREEN}Operation complete ${NC}"
