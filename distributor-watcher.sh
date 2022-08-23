@@ -17,6 +17,8 @@ failTrashold=3
 
 scriptPath=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 shutdownLogPath="$scriptPath/shutdown.log"
+runLogPath="$scriptPath/run.log"
+curTime=$(date '+%d-%m-%Y %H:%M:%S')
 
 echo -e "${GREEN}Starting distributors check${NC}"
 
@@ -95,7 +97,6 @@ do
          echo 'Shutdown is complete'
          cd $curLocation
 
-         curTime=$(date '+%d-%m-%Y %H:%M:%S')
          echo "$curTime - Shutdown '$familyBucket'" >> $shutdownLogPath
 
          #and let's clear fail count as node is already shutdown
@@ -105,4 +106,5 @@ do
    fi
 done
 
+echo "$curTime - script executed" >> $runLogPath
 echo -e "${GREEN}Operation complete ${NC}"
