@@ -47,10 +47,10 @@ do
    #cutting schema part to get hostname
    host=${host:8}
 
-   if [[ ! -d "./$host/" ]]
+   if [[ ! -d "$scriptPath/$host/" ]]
    then
       echo "Folder with data about $host does not exist. Going to create it"
-      mkdir "./$host"
+      mkdir "$scriptPath/$host"
    fi
 
    echo "Going to check $endpToCheck for status code"
